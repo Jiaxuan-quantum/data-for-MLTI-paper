@@ -1,25 +1,5 @@
 import numpy as np
 import itertools
-def bisection_solver(f, a, b, tol=1e-10, max_iter=1000):
-    # 检查初始区间是否包含根
-    if f(a) * f(b) > 0:
-        raise ValueError("区间[a, b]内函数值同号，请确保f(a)和f(b)异号。")
-    
-    iterations = 0
-    # 迭代直到满足精度或达到最大迭代次数
-    for _ in range(max_iter):
-        c = (a + b) / 2  # 计算中点
-        if abs(f(c)) < tol or (b - a) < tol:
-            return c, iterations + 1
-        
-        # 选择包含根的子区间
-        if f(a) * f(c) < 0:
-            b = c
-        else:
-            a = c
-        iterations += 1
-    # 达到最大迭代次数仍未收敛
-    return (a + b) / 2.0, iterations, "怎么个事？"
 
 def input_angle(k, beta):
     alpha = np.arctan(np.tan(beta)**(1/k))
