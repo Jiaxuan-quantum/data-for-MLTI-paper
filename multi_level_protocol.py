@@ -634,7 +634,7 @@ def optimized_infidelity_level_four(theta, p_phy):
         delta = input_angle(k4, theta) - np.pi/8
         gamma = input_angle(k3, abs(delta)) - np.pi/8
         beta = input_angle(k2, abs(gamma))-np.pi/8
-        if abs(beta) > np.pi/16 or abs(gamma) > np.pi/16 or abs(gamma) > np.pi/16:
+        if abs(beta) > np.pi/16 or abs(gamma) > np.pi/16 or abs(delta) > np.pi/16:
             continue
         for dz1 in range(3,48,3):
             t_error1, t_volume1 = 0, 0
